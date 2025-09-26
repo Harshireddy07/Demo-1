@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Simple Home Page</title>
+  <style>
+    :root{--accent:#ff4d6d;--bg:#0f0f12;--card:#0f1720;--muted:#9aa4b2}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,#071025 0%, #0b1220 100%);color:#e6eef6}
+    .container{max-width:1000px;margin:36px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#ff9ab8);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:#e6eef6;text-decoration:none;margin-left:18px;font-weight:600}
+    .hero{margin-top:28px;background:rgba(255,255,255,0.02);padding:28px;border-radius:12px;display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:center}
+    .hero h1{margin:0;font-size:28px}
+    .hero p{color:var(--muted);line-height:1.5}
+    .cta{margin-top:18px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+    .card{background:rgba(255,255,255,0.01);padding:18px;border-radius:12px}
+    footer{margin-top:28px;color:var(--muted);font-size:14px;text-align:center}
+    @media (max-width:820px){.hero{grid-template-columns:1fr;}.logo{width:38px;height:38px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">HB</div>
+        <div>
+          <div style="font-weight:800">My Website</div>
+          <div style="font-size:13px;color:var(--muted)">Simple & responsive home page</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <!-- External link to another website: opens in a new tab -->
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">Visit Example.com</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Welcome to My Simple Home Page</h1>
+          <p>This clean, single-file HTML page is mobile-friendly and ready to customize. Use the external link in the top-right to point visitors to another website (it opens in a new tab).</p>
+
+          <div class="cta">
+            <a class="btn" href="#contact">Get in touch</a>
+            <a style="margin-left:10px;color:var(--muted);text-decoration:underline" href="https://example.com" target="_blank" rel="noopener noreferrer">Open external website</a>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top:0">Quick info</h3>
+          <p style="color:var(--muted)">Replace <code>https://example.com</code> with any URL you want. The attribute <code>target="_blank" rel="noopener noreferrer"</code> ensures the link opens safely in a new tab.</p>
+
+          <div style="margin-top:12px">
+            <strong>How to use</strong>
+            <ol style="color:var(--muted);padding-left:18px;margin-top:8px">
+              <li>Save this file as <code>index.html</code>.</li>
+              <li>Open it in your browser or upload to your web host.</li>
+              <li>Edit text, links, and styles to match your brand.</li>
+            </ol>
+          </div>
+        </aside>
+      </section>
+
+      <section id="features" style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <div class="card">
+          <h4 style="margin:6px 0">Responsive</h4>
+          <p style="color:var(--muted)">Looks good on mobile and desktop without extra frameworks.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin:6px 0">Lightweight</h4>
+          <p style="color:var(--muted)">Single-file HTML and CSS — easy to copy and extend.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin:6px 0">External Link</h4>
+          <p style="color:var(--muted)">The navigation includes an example external link (opens in new tab).</p>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:18px" class="card">
+        <h3>About</h3>
+        <p style="color:var(--muted)">A starting template you can fork. I kept styles minimal so you can integrate this into any project or expand it with your favourite UI framework.</p>
+      </section>
+
+      <section id="contact" style="margin-top:18px" class="card">
+        <h3>Contact</h3>
+        <form onsubmit="event.preventDefault(); alert('Form submitted (demo)');" style="display:grid;gap:8px">
+          <input type="text" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          <input type="email" placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          <div>
+            <button class="btn" type="submit">Send message</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> My Website — Created with a template. External link example: <a href="https://example.com" target="_blank" rel="noopener noreferrer">example.com</a>
+    </footer>
+  </div>
+
+  <script>
+    // small script to set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
